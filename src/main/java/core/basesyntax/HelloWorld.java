@@ -5,17 +5,21 @@ package core.basesyntax;
  */
 public class HelloWorld {
     private static final int FIGURE_COUNT = 6;
-    private static FigureSupplier figureSupplier = new FigureSupplier();
+    private static final FigureSupplier figureSupplier = new FigureSupplier();
 
     public static void main(String[] args) {
         Figure[] figures = new Figure[FIGURE_COUNT];
 
         for (int i = 0; i < FIGURE_COUNT; i++) {
-            if (i % 2 == 0) {
+            if (i < FIGURE_COUNT / 2) {
                 figures[i] = figureSupplier.getDefaultFigure();
             } else {
                 figures[i] = figureSupplier.getRandomFigure();
             }
+        }
+
+        for (Figure figure: figures) {
+            figure.draw();
         }
     }
 }
