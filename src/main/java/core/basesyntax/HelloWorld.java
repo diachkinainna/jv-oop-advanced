@@ -12,9 +12,9 @@ public class HelloWorld {
 
         for (int i = 0; i < FIGURE_COUNT; i++) {
             if (i < FIGURE_COUNT / 2) {
-                figures[i] = figureSupplier.getDefaultFigure();
-            } else {
                 figures[i] = figureSupplier.getRandomFigure();
+            } else {
+                figures[i] = figureSupplier.getDefaultFigure();
             }
         }
 
